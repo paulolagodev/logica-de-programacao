@@ -14,18 +14,39 @@ float calculoDist( float x1, float x2, float y1, float y2){
 }
 int main(){
     float x1, x2, y1, y2;
+    char c;
+    
 
     // Solicita ao usuário 4 valores, sendo estes (x1,x2) e (y1,y2).
     printf("Distancia do ponto 1:\n");
     printf("Posicao x:\n");
-    scanf("%f", &x1);
+    while (scanf("%f", &x1) != 1){ // Laço de repetição que restringe o usuário a digitar apenas números racionais
+     while( (c = getchar()) != '\n'); //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+        printf("O valor inserido nao eh racional! Tente outra vez\n");
+        printf("Posicao x:\n");
+    }
+
     printf("Posicao y:\n");
-    scanf("%f", &x2);
+    while (scanf("%f", &x2) != 1){ 
+     while( (c = getchar()) != '\n'); 
+        printf("O valor inserido nao eh racional! Tente outra vez\n");
+        printf("Posicao y:\n");
+    }
+
     printf("Distancia do ponto 2:\n");
     printf("Posicao x:\n");
-    scanf("%f", &y1);
+    while (scanf("%f", &y1) != 1){ 
+     while( (c = getchar()) != '\n'); 
+        printf("O valor inserido nao eh racional! Tente outra vez\n");
+        printf("Posicao x:\n");
+    }
+
     printf("Posicao y:\n");
-    scanf("%f", &y2);
+    while (scanf("%f", &y2) != 1){ 
+     while( (c = getchar()) != '\n'); 
+        printf("O valor inserido nao eh racional! Tente outra vez\n");
+        printf("Posicao y:\n");
+    }
 
     // Exibe ao usuário a função da distância entre dois pontos e seus respectivos cálculos.
     printf("%.2f", calculoDist(x1, x2, y1, y2));

@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Função que imprime a tabuada de acordo com o numero informado pelo usuário
 void imprimirtabuada (int numero){
     int i;
     
@@ -10,16 +11,22 @@ void imprimirtabuada (int numero){
 
 int main(){
     int numero;
+    char c;
 
-    do {
     printf("Informe um numero de 1 a 9:\n");
-    scanf("%d", &numero);
-    if( numero < 1 || numero > 9){
-        printf("O valor inserido nao esta entre 1 e 9! Tente novamente.\n");
-    } else {
-        imprimirtabuada(numero);
+
+    // Loop infinito 
+    while(1){
+        if( scanf("%d", &numero) == 1 && numero >= 1 && numero <=9){
+            break;
+        } else {
+            //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+            while (( c = getchar()) != '\n'); 
+            printf("O valor informado nao eh um numero inteiro ou nao esta entre 1 e 9.\n");
+            printf("Informe um valor valido:\n");
+        }
     }
-    } while (numero < 1 || numero > 9);
+    imprimirtabuada(numero);
 
     return 0;
 }

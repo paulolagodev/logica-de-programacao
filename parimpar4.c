@@ -11,10 +11,15 @@ int impar (int valor){
 }
 int main(){
     int valor;
+    char c;
     
-    printf("Digite um valor:\n");
-    scanf("%d", &valor);
-    printf("%d", impar(valor));
+    printf("Digite um valor inteiro:\n"); // Solicita ao usuário um valor inteiro
+    while(scanf("%d", &valor) != 1){ // Laço de repetição que restringe o usuário a digitar apenas números inteiros
+     while((c = getchar()) != '\n'); //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+      printf("O valor informado nao eh inteiro! Tente outra vez.\n");
+      printf("Informe um valor valido:\n");
+    }
+      printf("%d", impar(valor));
 
     return 0;
 }

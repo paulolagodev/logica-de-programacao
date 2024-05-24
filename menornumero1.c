@@ -10,15 +10,25 @@ int menor_numero(int valor1, int valor2){
 }
 int main(){
     int valor1, valor2;
+    char c;
+    
+    printf("Digite um valor:\n"); // Solicita ao usuário um valor inteiro
+    
+    while(scanf("%d", &valor1) != 1){ // Laço de repetição que restringe o usuário a digitar apenas números inteiros
+     while((c = getchar()) != '\n'); //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+     printf("O valor informado nao eh um numero inteiro!\n");
+     printf("Informe um valor valido:\n");
+    }
 
-    // Solicita ao usuário dois valores
-    printf("Digite um valor:\n");
-    scanf("%d", &valor1);
     printf("Digite outro valor:\n");
-    scanf("%d", &valor2);
+    while(scanf("%d", &valor2) != 1){ // Laço de repetição que restringe o usuário a digitar apenas números inteiros
+     while((c = getchar()) != '\n'); //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+     printf("O valor informado nao eh um numero inteiro!\n");
+     printf("Informe um valor valido:\n");
+    }
 
     // Exibe ao usuário o menor valor inserido
-    printf("Menor valor informado: %d\n", menor_numero(valor1, valor2));
+    printf("Menor valor informado: %d\n", menor_numero(valor1, valor2)); // Retorna o menor número informado pelo usuário
 
     return 0;
 }

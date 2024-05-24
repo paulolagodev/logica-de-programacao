@@ -3,17 +3,18 @@
 // Função que lê os números informados e repete até que os valores inseridos pelo usuário sejam inteiros positivo
 void lerNumeros(int num[]) {
     int i;
+    char c;
 
     printf("Insira cinco numeros inteiros positivo\n");
     for (i = 0; i < 5; i++) {
-        do {
-            printf("Numero %d :\n", i + 1);
-            scanf("%d", &num[i]);
-            if (num[i] <= 0) {
-                printf("O numero inserido nao e positivo! Tente novamente.\n");
-            }
-        } while (num[i] <= 0);
-    }
+        
+      printf("Numero %d :\n", i + 1);
+      while(scanf("%d", &num[i]) != 1){ // Laço de repetição que restringe o usuário a digitar apenas números inteiros
+      while((c = getchar()) != '\n'); //  Laço de repetição que evita o programa entrar em loop infinito ao receber uma string
+      printf("O valor informado nao eh inteiro positivo! Tente outra vez.\n");
+      printf("Numero %d :\n", i + 1);
+      }
+    } 
 }
 
 // Função que soma os divisores de cada número informado pelo usuário
